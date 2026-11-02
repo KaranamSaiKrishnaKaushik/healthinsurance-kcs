@@ -78,13 +78,15 @@ Scroll reveals use IntersectionObserver and respect prefers-reduced-motion.
    and Azure deployment token authorisation. Our workflow is already included.
 2. Open **Overview > Manage deployment token** and copy the token.
 3. Add it under GitHub **Settings > Secrets and variables > Actions** as the
-   repository secret **AZURE_STATIC_WEB_APPS_API_TOKEN**. Never commit the token.
+   repository secret **AZURE_STATIC_WEB_APPS_API_TOKEN**. The workflow also accepts
+   Azure's generated **AZURE_STATIC_WEB_APPS_API_TOKEN_PROUD_DESERT_064308503** secret
+   (preferred when both exist). Never commit the token.
 4. Run **Actions > Deploy Azure Static Web App > Run workflow**, or push to `main`.
 5. Open the site URL in the Azure resource's Overview page.
 
-The workflow runs npm ci, builds Angular, checks output and uploads
-`dist/healthinsurance-kcs/browser` with `skip_app_build: true`. Without the secret,
-it builds/checks but skips the Azure upload. Avoid enabling a second portal-
+Only one deployment workflow is enabled. It runs npm ci, builds Angular, checks output and uploads
+`dist/healthinsurance-kcs/browser` with `skip_app_build: true`. Without a token,
+the workflow fails with a clear configuration error. Avoid enabling a second portal-
 generated deployment workflow. `staticwebapp.config.json` is copied into the
 output directory. This page uses hash anchors, so no catch-all SPA rewrite is
 needed; missing asset URLs correctly return 404.
