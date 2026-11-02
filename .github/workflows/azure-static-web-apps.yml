@@ -1,0 +1,42 @@
+name: Deploy Azure Static Web App
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: azure-static-web-app-production
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    env:
+      DEPLOYMENT_TOKEN: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Stage public website files
+        run: |
+          mkdir -p dist
+          cp index.html styles.css staticwebapp.config.json dist/
+
+      - name: Deploy static files
+        if: env.DEPLOYMENT_TOKEN != ''
+        uses: Azure/static-web-apps-deploy@v1
+        with:
+          azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN }}
+          action: upload
+          app_location: dist
+          api_location: ''
+          output_location: ''
+          skip_app_build: true
+          skip_api_build: true
+
+      - name: Explain pending Azure setup
+        if: env.DEPLOYMENT_TOKEN == ''
+        run: echo 'Website files are ready. Add the AZURE_STATIC_WEB_APPS_API_TOKEN repository secret to enable Azure deployment.'
