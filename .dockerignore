@@ -1,4 +1,8 @@
-*
-!index.html
-!styles.css
-!nginx.conf
+node_modules
+.angular
+dist
+.git
+.github
+.env
+.env.*
+.patch_test.diff

@@ -1,0 +1,62 @@
+<a class="skip-link" href="#main-content">Skip to content</a>
+<app-header />
+<main id="main-content">
+  <section class="hero" id="home" aria-labelledby="hero-title">
+    <div class="container hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow"><span class="status-dot"></span> INSURANCE, WITH A PERSONAL TOUCH</p>
+        <h1 id="hero-title">A little clarity today.<br>A more secure <span>tomorrow.</span></h1>
+        <p class="hero-tagline">{{ site.tagline }}.</p>
+        <div class="agent-intro"><span class="intro-line"></span><div><strong>{{ site.agent.name }}</strong><span>{{ site.agent.title }}</span></div></div>
+        <p class="hero-description">Health and life insurance can feel complicated. Let’s make it simpler, with a conversation about what matters to you.</p>
+        <app-contact-buttons />
+        <p class="hero-note"><app-icon name="forum" />A conversation is a good place to start.</p>
+      </div>
+      <div class="hero-visual" aria-label="Personal insurance guidance illustration">
+        <div class="visual-orbit orbit-one"></div><div class="visual-orbit orbit-two"></div>
+        <span class="decor-plus plus-one" aria-hidden="true">+</span><span class="decor-plus plus-two" aria-hidden="true">+</span>
+        <div class="portrait-card">
+          <div class="portrait-placeholder">@if (site.agent.photo; as photo) { <img [src]="photo" [alt]="site.agent.name" width="275" height="270"> } @else { <span class="portrait-arch"></span><app-icon name="person" /><span class="photo-caption">YOUR ADVISOR’S PHOTO HERE</span> }</div>
+          <div class="portrait-details"><span class="mini-label">YOUR INSURANCE ADVISOR</span><strong>{{ site.agent.name }}</strong><span class="portrait-location"><app-icon name="location_on" />{{ site.agent.location }}{{ site.agent.locationVerified ? '' : ' · placeholder' }}</span></div>
+        </div>
+        <div class="visual-tag tag-health"><span class="tag-icon"><app-icon name="health_and_safety" /></span><div><strong>Health insurance</strong><small>Care for what matters</small></div></div>
+        <div class="visual-tag tag-life"><span class="tag-icon warm"><app-icon name="diversity_1" /></span><div><strong>Life insurance</strong><small>Think ahead, together</small></div></div>
+        <div class="visual-seal"><app-icon name="shield" /><span>PEOPLE FIRST.<br>ALWAYS.</span></div>
+      </div>
+    </div>
+    <div class="container hero-bottom"><span>EXPLORE YOUR OPTIONS</span><div>@for (insurer of site.insurers; track insurer.id; let last = $last) { <span>{{ insurer.shortName }}</span>@if (!last) { <i></i> } }</div><a href="#partners" aria-label="Explore insurance partners"><app-icon name="south" /></a></div>
+  </section>
+
+  <section id="about" class="section about-section" aria-labelledby="about-title" appReveal>
+    <div class="container about-grid">
+      <div class="about-portrait">
+        @if (site.agent.photo; as photo) { <img [src]="photo" [alt]="site.agent.name + ', insurance advisor'" loading="lazy" width="440" height="480"> }
+        @else { <div class="about-photo-placeholder"><app-icon name="person" /><span>AGENT PHOTO PLACEHOLDER</span><small>Add your portrait to assets/images/</small></div> }
+        <span class="photo-corner">A familiar face.<br>A personal conversation.</span>
+      </div>
+      <div class="about-copy"><p class="eyebrow">HELLO, I’M YOUR ADVISOR</p><h2 id="about-title">Good advice starts<br>with <span>listening.</span></h2><p class="about-name">{{ site.agent.name }}</p><p class="section-copy">{{ site.agent.bio }}</p><p class="placeholder-note">The bio and guidance points below are editable placeholders.</p>
+        <ul class="trust-list">@for (point of site.trustPoints; track point) { <li><app-icon name="task_alt" /><span>{{ point }}</span></li> }</ul>
+        <a class="text-link" href="#contact">Let’s get to know your needs<app-icon name="arrow_forward" /></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="partners" class="section partners-section" aria-labelledby="partners-title" appReveal>
+    <div class="container"><div class="section-heading"><div><p class="eyebrow">HEALTH & LIFE, THOUGHTFULLY CONSIDERED</p><h2 id="partners-title">Different needs.<br><span>Options worth exploring.</span></h2></div><p class="section-copy">Explore these insurers with a little personal guidance. We’ll discuss your needs before looking at individual policies.</p></div>
+      <div class="insurer-grid">@for (insurer of site.insurers; track insurer.id) { <app-insurer-card [insurer]="insurer" /> }</div>
+      <p class="partners-note"><app-icon name="info" />Logo slots and certification badges are placeholders pending verification. Categories are illustrative; availability depends on official policy terms.</p>
+    </div>
+  </section>
+
+  <section id="process" class="section process-section" aria-labelledby="process-title" appReveal>
+    <div class="container"><div class="center-heading"><p class="eyebrow">A SIMPLE WAY FORWARD</p><h2 id="process-title">From questions to <span>clarity.</span></h2><p class="section-copy">You don’t need to have all the answers. We’ll take it one step at a time.</p></div>
+      <div class="steps-grid"><article class="step"><span class="step-number">01</span><span class="step-icon"><app-icon name="forum" /></span><h3>Talk to me</h3><p>Tell me about your family, priorities, and what you want your insurance to do.</p></article><article class="step"><span class="step-number">02</span><span class="step-icon"><app-icon name="compare_arrows" /></span><h3>Compare plans</h3><p>Understand cover, exclusions, waiting periods, and costs before making a choice.</p></article><article class="step"><span class="step-number">03</span><span class="step-icon"><app-icon name="verified_user" /></span><h3>Get covered</h3><p>Apply for your chosen policy. Cover begins only as confirmed by the insurer, subject to its terms.</p></article></div>
+    </div>
+  </section>
+
+  <section id="contact" class="section contact-section" aria-labelledby="contact-title" appReveal>
+    <div class="container"><div class="contact-panel"><div class="contact-main"><p class="eyebrow">LET’S START A CONVERSATION</p><h2 id="contact-title">Your peace of mind<br>starts with <span>a hello.</span></h2><p>Have a question or want to explore a plan? Reach out directly. I’d be happy to hear from you.</p><app-contact-buttons /><div class="contact-details"><span><app-icon name="call" />{{ site.contact.displayPhone }}</span><span><app-icon name="mail" />{{ site.contact.email }}</span></div></div><aside class="why-block" aria-labelledby="why-title"><span class="why-icon"><app-icon name="handshake" /></span><h3 id="why-title">Why choose me?</h3><p>A personal approach to an important decision.</p><ul>@for (point of site.whyChoose; track point) { <li><app-icon name="check" />{{ point }}</li> }</ul><small>Editable service commitments · please confirm.</small></aside></div></div>
+  </section>
+</main>
+<footer class="site-footer"><div class="container"><div class="footer-top"><div><a class="footer-brand" href="#home">KCS<span>.</span> Insurance</a><p>{{ site.agent.name }}</p><small>{{ site.agent.title }}</small></div><div class="footer-licence"><span>IRDAI AGENT LICENCE</span><p>{{ site.agent.licence }}</p><small>{{ site.agent.licenceVerified ? 'Agent licence details' : 'Placeholder · to be verified before publication' }}</small></div><a class="back-top" href="#home">Back to top<app-icon name="north" /></a></div><p class="disclaimer">{{ site.disclaimer }}</p><div class="footer-bottom"><span>© {{ year }} {{ site.agent.name }}</span><span>Personal guidance. Thoughtful choices.</span></div></div></footer>
+<a class="floating-whatsapp" [href]="whatsapp" target="_blank" rel="noopener noreferrer" [attr.aria-label]="'Chat with ' + site.agent.name + ' on WhatsApp (opens in a new tab)'"><app-icon name="chat_bubble" /><span>Let’s chat</span></a>
