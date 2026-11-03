@@ -43,9 +43,9 @@ export const siteConfig: SiteConfig = {
     initials: 'KCS',
     location: 'Hyderabad',
     locationVerified: false,
-    bio: '[Editable bio] I help individuals and families understand their health and life insurance options. My approach is to listen to your needs, explain policy terms in plain language, and help you make an informed choice.',
+    bio: 'I help individuals and families understand their health and life insurance options. My approach is to listen to your needs, explain policy terms in plain language, and help you make an informed choice.',
     photo: null,
-    licence: '[Add IRDAI agent licence number]',
+    licence: 'LIC12508260821',
     licenceVerified: false
   },
   contact: {
