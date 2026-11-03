@@ -24,6 +24,11 @@ export interface SiteConfig {
     readonly email: string; readonly whatsappMessage: string;
     readonly emailSubject: string; readonly emailBody: string;
   };
+  readonly visuals: {
+    readonly visitingCard: string;
+    readonly consultationAnimation: string;
+    readonly consultationStill: string;
+  };
   readonly tagline: string;
   readonly trustPoints: readonly string[];
   readonly whyChoose: readonly string[];
@@ -50,6 +55,11 @@ export const siteConfig: SiteConfig = {
     emailSubject: 'Insurance enquiry — Chandra Sekhar Rao Karanam',
     emailBody: 'Hello Mr. Karanam,\n\nI would like to understand my insurance options. Please let me know a convenient time to connect.\n\nMy name:\nPreferred contact time:\n\nThank you.'
   },
+  visuals: {
+    visitingCard: 'assets/images/agent-visiting-card.jpeg',
+    consultationAnimation: 'assets/images/agent-consultation-animated.svg',
+    consultationStill: 'assets/images/agent-consultation-static.svg'
+  },
   tagline: 'Protecting you and your family, with honest advice',
   trustPoints: ['[Confirm] Guidance based on your needs', '[Confirm] Clear explanations of policy terms', '[Confirm] Help with policy documentation'],
   whyChoose: ['[Confirm] One person to speak with', '[Confirm] Help understanding your choices', '[Confirm] Support through the application'],
@@ -59,7 +69,7 @@ export const siteConfig: SiteConfig = {
       accent: '#08746e', icon: 'health_and_safety',
       description: 'Explore health cover for different life stages and family needs.',
       categories: ['Individual', 'Family Floater', 'Senior Citizens', 'Top-up'],
-      logo: null, certificationVerified: false,
+      logo: 'assets/logos/niva-bupa.svg', certificationVerified: false,
       quoteMessage: 'Hello Mr. Karanam, I would like a quote for Niva Bupa Health Insurance. Could you help me understand the available plans?'
     },
     {
@@ -67,7 +77,7 @@ export const siteConfig: SiteConfig = {
       accent: '#255d98', icon: 'favorite',
       description: 'Understand health insurance options that fit your priorities.',
       categories: ['Individual', 'Family Floater', 'Senior Citizens', 'Top-up'],
-      logo: null, certificationVerified: false,
+      logo: 'assets/logos/tata-aig.png', certificationVerified: false,
       quoteMessage: 'Hello Mr. Karanam, I would like a quote for Tata AIG Health Insurance. Could you help me compare the available options?'
     },
     {
@@ -75,7 +85,7 @@ export const siteConfig: SiteConfig = {
       accent: '#8a4a36', icon: 'diversity_1',
       description: 'Consider life insurance for the people and milestones that matter.',
       categories: ['Term', 'Endowment', 'Pension', 'Child plans'],
-      logo: null, certificationVerified: false,
+      logo: 'assets/logos/lic.svg', certificationVerified: false,
       quoteMessage: 'Hello Mr. Karanam, I would like to discuss Life Insurance Corporation of India (LIC) plans. Could you help me find suitable options?'
     }
   ],

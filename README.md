@@ -48,11 +48,14 @@ Do not publish the placeholder details as verified facts.
 
 Place official logo files you are authorised to use in `src/assets/logos/`.
 Set each `logo` property to a relative path such as `assets/logos/niva-bupa.svg`.
-Keep `logo: null` to retain the styled text-only placeholder. No insurer artwork
-is downloaded or fabricated. Use optimised SVG or WebP files.
+Keep `logo: null` to retain the styled text-only placeholder. The initial logo files are sourced from the official insurer websites at the
+site owner's request; source URLs are recorded in assets/logos/README.md. Use optimised SVG or WebP files.
 
 Add the agent's portrait to `src/assets/images/agent.webp` and set `agent.photo`
-to `assets/images/agent.webp`. It replaces the hero and about placeholders. The
+to `assets/images/agent.webp` when using a portrait elsewhere.
+The hero visiting card and About animation are configured separately under
+`visuals.visitingCard`, `visuals.consultationAnimation`, and
+`visuals.consultationStill`. A static SVG is selected for reduced-motion users. The
 about image and insurer logos are lazy-loaded with dimensions and alt text.
 
 ## Build and verify
