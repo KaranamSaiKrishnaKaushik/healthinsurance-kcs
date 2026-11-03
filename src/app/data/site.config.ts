@@ -49,11 +49,11 @@ export const siteConfig: SiteConfig = {
     licenceVerified: false
   },
   contact: {
-    whatsappNumber: '919908522456', displayPhone: '+91 9908522456',
+    whatsappNumber: '919908522765', displayPhone: '+91 9908522765',
     email: 'kcsrao.hyd.karanam@gmail.com',
-    whatsappMessage: 'Hello Mr. Karanam, I would like to discuss insurance options for me and my family.',
+    whatsappMessage: 'Hello Mr. Chandrasekhar Rao Karanam, I would like to discuss insurance options for me and my family.',
     emailSubject: 'Insurance enquiry — Chandra Sekhar Rao Karanam',
-    emailBody: 'Hello Mr. Karanam,\n\nI would like to understand my insurance options. Please let me know a convenient time to connect.\n\nMy name:\nPreferred contact time:\n\nThank you.'
+    emailBody: 'Hello Mr. Chandrasekhar Rao Karanam,\n\nI would like to understand my insurance options. Please let me know a convenient time to connect.\n\nMy name:\nPreferred contact time:\n\nThank you.'
   },
   visuals: {
     visitingCard: 'assets/images/agent-visiting-card.jpeg',
@@ -61,8 +61,8 @@ export const siteConfig: SiteConfig = {
     consultationStill: 'assets/images/agent-consultation-static.svg'
   },
   tagline: 'Protecting you and your family, with honest advice',
-  trustPoints: ['[Confirm] Guidance based on your needs', '[Confirm] Clear explanations of policy terms', '[Confirm] Help with policy documentation'],
-  whyChoose: ['[Confirm] One person to speak with', '[Confirm] Help understanding your choices', '[Confirm] Support through the application'],
+  trustPoints: ['Guidance based on your needs', 'Clear explanations of policy terms', 'Help with policy documentation'],
+  whyChoose: ['One person to speak with', 'Help understanding your choices', 'Support through the application'],
   insurers: [
     {
       id: 'niva-bupa', name: 'Niva Bupa Health Insurance', shortName: 'Niva Bupa', type: 'HEALTH INSURANCE',
@@ -70,7 +70,7 @@ export const siteConfig: SiteConfig = {
       description: 'Explore health cover for different life stages and family needs.',
       categories: ['Individual', 'Family Floater', 'Senior Citizens', 'Top-up'],
       logo: 'assets/logos/niva-bupa.svg', certificationVerified: false,
-      quoteMessage: 'Hello Mr. Karanam, I would like a quote for Niva Bupa Health Insurance. Could you help me understand the available plans?'
+      quoteMessage: 'Hello Mr. Chandrasekhar Rao Karanam, I would like a quote for Niva Bupa Health Insurance. Could you help me understand the available plans?'
     },
     {
       id: 'tata-aig', name: 'Tata AIG Health Insurance', shortName: 'Tata AIG', type: 'HEALTH INSURANCE',
@@ -78,7 +78,7 @@ export const siteConfig: SiteConfig = {
       description: 'Understand health insurance options that fit your priorities.',
       categories: ['Individual', 'Family Floater', 'Senior Citizens', 'Top-up'],
       logo: 'assets/logos/tata-aig.png', certificationVerified: false,
-      quoteMessage: 'Hello Mr. Karanam, I would like a quote for Tata AIG Health Insurance. Could you help me compare the available options?'
+      quoteMessage: 'Hello Mr. Chandrasekhar Rao Karanam, I would like a quote for Tata AIG Health Insurance. Could you help me compare the available options?'
     },
     {
       id: 'lic', name: 'Life Insurance Corporation of India (LIC)', shortName: 'LIC of India', type: 'LIFE INSURANCE',
@@ -86,7 +86,7 @@ export const siteConfig: SiteConfig = {
       description: 'Consider life insurance for the people and milestones that matter.',
       categories: ['Term', 'Endowment', 'Pension', 'Child plans'],
       logo: 'assets/logos/lic.svg', certificationVerified: false,
-      quoteMessage: 'Hello Mr. Karanam, I would like to discuss Life Insurance Corporation of India (LIC) plans. Could you help me find suitable options?'
+      quoteMessage: 'Hello Mr. Chandrasekhar Rao Karanam, I would like to discuss Life Insurance Corporation of India (LIC) plans. Could you help me find suitable options?'
     }
   ],
   disclaimer: "Insurance is the subject matter of solicitation. This is an independent agent's website, not the official website of any insurer. Plan details are indicative; refer to the official policy documents."
